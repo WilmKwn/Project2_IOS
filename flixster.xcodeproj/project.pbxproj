@@ -23,7 +23,6 @@
 		8E353586298AEB8700E1FD9F /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E353585298AEB8700E1FD9F /* MovieCell.swift */; };
 		8E353588298AFA4B00E1FD9F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E353587298AFA4B00E1FD9F /* DetailViewController.swift */; };
 		8E4324E5298B8A97002C12C1 /* PosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4324E4298B8A97002C12C1 /* PosterViewController.swift */; };
-		8E4324E7298B8B3E002C12C1 /* Posters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4324E6298B8B3E002C12C1 /* Posters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +62,6 @@
 		8E353585298AEB8700E1FD9F /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		8E353587298AFA4B00E1FD9F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8E4324E4298B8A97002C12C1 /* PosterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterViewController.swift; sourceTree = "<group>"; };
-		8E4324E6298B8B3E002C12C1 /* Posters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				124A9A8F297B1B67006AAACF /* Movies.swift */,
-				8E4324E6298B8B3E002C12C1 /* Posters.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -296,7 +293,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E4324E7298B8B3E002C12C1 /* Posters.swift in Sources */,
 				8E4324E5298B8A97002C12C1 /* PosterViewController.swift in Sources */,
 				8E3492F1298B989A00191EAE /* PosterCell.swift in Sources */,
 				124A9A92297B1DB9006AAACF /* MovieListViewController.swift in Sources */,

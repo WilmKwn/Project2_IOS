@@ -26,7 +26,7 @@ class MovieListViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        /*let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing/?api_key=58de9086dcc7bf9440a6289814317f71")!
+        let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing/?api_key=58de9086dcc7bf9440a6289814317f71")!
         let request = URLRequest(url: url)
         let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
             do {
@@ -40,8 +40,7 @@ class MovieListViewController: UIViewController, UITableViewDataSource {
                 print(error)
             }
         }
-        task.resume()*/
-        movies = MoviesResponse.loadJson()
+        task.resume()
         tableView.dataSource = self
     }
     

@@ -17,12 +17,12 @@ class PosterViewController: UIViewController, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PosterCell", for: indexPath) as! PosterCell
         let poster = posters[indexPath.item]
-        let url = (Poster.posterBaseURLString + poster.poster_path)
+        let url = (Movie.posterBaseURLString + poster.poster_path)
         Nuke.loadImage(with: URL(string: url)!, into: cell.posterImageView);
         return cell;
     }
     
-    var posters: [Poster] = []
+    var posters: [Movie] = []
 
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
@@ -32,7 +32,7 @@ class PosterViewController: UIViewController, UICollectionViewDataSource {
         let request = URLRequest(url: url)
         let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
             do {
-                let jsonData = try JSONDecoder().decode(PostersResponse.self, from: data!)
+                let jsonData = try JSONDecoder().decode(MoviesResponse.self, from: data!)
                 let posters = jsonData.results
                 DispatchQueue.main.async {
                     self?.posters = posters
@@ -53,15 +53,13 @@ class PosterViewController: UIViewController, UICollectionViewDataSource {
         layout.itemSize = CGSize(width: width, height: width)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+        if let cell = sender as? UICollectionViewCell,
+            let indexPath = collectionView.indexPath(for: cell),
+            let detailViewController = segue.destination as? DetailViewController {
 
+            let poster = posters[indexPath.row]
+            detailViewController.movie = poster
+        }
+    }
 }
